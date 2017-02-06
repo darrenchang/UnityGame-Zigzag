@@ -19,8 +19,10 @@ public class PlatformSpawner : MonoBehaviour {
 		for (int i = 0; i < 20; i++) {
 			SpawnPlatforms();
 		}
+	}
 
-		InvokeRepeating ("SpawnPlatforms", 2f, 0.2f);
+	public void startSpawningPlatforms() {
+		InvokeRepeating ("SpawnPlatforms", 0.1f, 0.2f);
 	}
 
 	void SpawnPlatforms() {
@@ -34,7 +36,7 @@ public class PlatformSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameOver) {
+		if (GameManager.instance.gameOver == true) {
 			CancelInvoke("SpawnPlatforms");
 		}
 	}

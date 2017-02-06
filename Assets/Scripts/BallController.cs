@@ -28,16 +28,18 @@ public class BallController : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 				rb.velocity = new Vector3 (speed, 0, 0);
 				start = true;
+
+				GameManager.instance.startGame();
 			}
 		}
-
-		Debug.DrawRay (transform.position, Vector3.down, Color.red);
 
 		if (!Physics.Raycast (transform.position, Vector3.down, 1f)) {
 			gameOver = true;
 			rb.velocity = new Vector3 (0, -25f, 0);
 
 			Camera.main.GetComponent<CameraFollow> ().gameOver = true;
+
+			GameManager.instance.GameOver();
 		}
 
 		if (Input.GetMouseButtonDown (0) && !gameOver) {
