@@ -17,6 +17,7 @@ public class TriggerChecker : MonoBehaviour {
 	void OnTriggerExit(Collider col) {
 		if (col.gameObject.tag == "Ball") {
 			Invoke ("FallDown", 0.5f);
+			ScoreManager.instance.IncrementScore ();
 		}
 	}
 
@@ -24,5 +25,6 @@ public class TriggerChecker : MonoBehaviour {
 		GetComponentInParent<Rigidbody> ().useGravity = true;
 		GetComponentInParent<Rigidbody> ().isKinematic = false;
 		Destroy (transform.parent.gameObject, 2f);
+		PlatformSpawner.instance.SpawnPlatforms ();
 	}
 }

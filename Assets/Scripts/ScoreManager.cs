@@ -22,15 +22,15 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		PlayerPrefs.SetInt ("score", score);
 	}
 
-	void IncrementScore () {
+	public void IncrementScore () {
 		score++;
 	}
 
 	public void startScore() {
-		InvokeRepeating ("IncrementScore", 0.1f, 0.5f);
+		//InvokeRepeating ("IncrementScore", 0.1f, 0.5f);
 	}
 
 	public void stopScore() {

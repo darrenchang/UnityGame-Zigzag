@@ -1,9 +1,28 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UiManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BallController.cs">
     <Files>
-      <File FileName="Assets\Scripts\UiManager.cs" Line="9" Column="2" />
+      <File FileName="Assets\Scripts\UiManager.cs" Line="49" Column="37" />
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="20" Column="37" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="13" Column="4" />
+      <File FileName="Assets\Scripts\BallController.cs" Line="5" Column="46" />
+      <File FileName="Assets\Scripts\PlatformSpawner.cs" Line="12" Column="4" />
+      <File FileName="Assets\Scripts\TriggerChecker.cs" Line="20" Column="44" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UnityGame-Zigzag" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="BallController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

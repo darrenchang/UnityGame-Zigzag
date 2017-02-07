@@ -14,6 +14,7 @@ public class UiManager : MonoBehaviour {
 	public Text score;
 	public Text highScore1;
 	public Text highScore2;
+	public Text currentScore;
 
 	void Awake () {
 		if (instance == null) {
@@ -38,11 +39,17 @@ public class UiManager : MonoBehaviour {
 	}
 
 	public void Reset() {
+		//gameOverPanel.GetComponent<Animator> ().Play("gameOverPanelDisappear");
 		SceneManager.LoadScene (0);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (!GameObject.Find ("Ball").GetComponent<BallController> ().gameOver &&
+			PlayerPrefs.GetInt ("score") != 0) {
+			currentScore.text = PlayerPrefs.GetInt ("score").ToString ();
+		} else {
+			currentScore.text = "";
+		}
 	}
 }

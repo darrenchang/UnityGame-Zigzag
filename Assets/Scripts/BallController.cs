@@ -9,7 +9,7 @@ public class BallController : MonoBehaviour {
 	[SerializeField]
 	private float speed;
 	bool start;
-	bool gameOver;
+	public bool gameOver;
 	Rigidbody rb;
 
 	void Awake() {
@@ -57,6 +57,7 @@ public class BallController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.tag == "Diamond") {
+			ScoreManager.instance.IncrementScore ();
 			GameObject part = Instantiate (particle, col.gameObject.transform.position, Quaternion.identity) as GameObject;
 			Destroy (col.gameObject);
 			Destroy (part, 1f);

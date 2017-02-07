@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour {
 
+	public static PlatformSpawner instance;
+
+	void Awake () {
+		if (instance == null) {
+			instance = this;
+		}
+	}
+
 	public GameObject platform;
 	public GameObject diamond;
 
@@ -16,16 +24,16 @@ public class PlatformSpawner : MonoBehaviour {
 		lastPos = platform.transform.position;
 		size = platform.transform.localScale.x;
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 30; i++) {
 			SpawnPlatforms();
 		}
 	}
 
 	public void startSpawningPlatforms() {
-		InvokeRepeating ("SpawnPlatforms", 0.1f, 0.2f);
+		//InvokeRepeating ("SpawnPlatforms", 0.1f, 0.2f);
 	}
 
-	void SpawnPlatforms() {
+	public void SpawnPlatforms() {
 		int rand = Random.Range (0, 6);
 		if (rand < 3) {
 			SpawnX ();
